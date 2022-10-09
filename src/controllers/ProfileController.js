@@ -11,6 +11,8 @@ exports.CreateProfile = (req,res)=>{
         }
     })
 }
+
+
 exports.UserLogin = (req,res)=>{
     let UserName = req.body['UserName'];
     let Password = req.body['Password'];
@@ -43,5 +45,20 @@ exports.SelectProfile = (req,res)=>{
             res.status(200).json({status:"Success",data:data})
         }
     })
+}
+
+
+exports.UpdateProfile = (req,res)=>{
+    let UserName = req.headers['username'];
+    let reqBody = req.body;
+
+    ProfileModel.updateOne({UserName:UserName}, {$set:reqBody},{upsert:true}, (err,data)=>{
+        if (err){
+            res.status(400).json({status:"Fail",data:err})
+        }else{
+            res.status(200).json({status:"Success",data:data})
+        }
+    })
+
 
 }
