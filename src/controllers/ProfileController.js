@@ -1,5 +1,5 @@
 const ProfileModel = require("../models/ProfileModel");
-var jwt = require('jsonwebtoken');
+let jwt = require('jsonwebtoken');
 
 exports.CreateProfile = (req,res)=>{
     let reqBody = req.body;
@@ -26,11 +26,10 @@ exports.UserLogin = (req,res)=>{
 
                 res.status(200).json({status:"Success",token:token,data:data})
             }else{
-                res.status(400).json({status:"Unauthorized"})
+                res.status(401).json({status:"Unauthorized"})
             }
         }
     })
-
 
 }
 
@@ -44,6 +43,5 @@ exports.SelectProfile = (req,res)=>{
             res.status(200).json({status:"Success",data:data})
         }
     })
-
 
 }

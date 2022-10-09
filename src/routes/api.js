@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.post("/CreateProfile",ProfileController.CreateProfile)
 router.post("/UserLogin",ProfileController.UserLogin)
+
 router.get("/SelectProfile",AuthVarifyMiddleware,ProfileController.SelectProfile)
+
 
 module.exports=router;
