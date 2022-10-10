@@ -14,6 +14,12 @@ router.post("/UpdateProfile",AuthVarifyMiddleware,ProfileController.UpdateProfil
 
 
 router.post("/CreateToDo",AuthVarifyMiddleware,ToDoListController.CreateToDo)
+router.get("/SelectToDo",AuthVarifyMiddleware,ToDoListController.SelectToDo)
+router.post("/UpdateToDo",AuthVarifyMiddleware,ToDoListController.UpdateToDo)
+router.post("/UpdateStatusToDo",AuthVarifyMiddleware,ToDoListController.UpdateStatusToDo)
+router.post("/RemoveToDo",AuthVarifyMiddleware,ToDoListController.RemoveToDo)
+router.post("/SelectToDoByStatus",AuthVarifyMiddleware,ToDoListController.SelectToDoByStatus)
+router.post("/SelectToDoByDate",AuthVarifyMiddleware,ToDoListController.SelectToDoByDate)
 
 
 module.exports=router;

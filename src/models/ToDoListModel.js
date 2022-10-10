@@ -4,7 +4,7 @@ const DataSchema = mongoose.Schema({
     UserName:{type:String},
     TodoSubject:{type:String},
     TodoDescription:{type:String},
-    TodoStatus:{String},
+    TodoStatus:{type:String},
     TodoCreateDate:{type:Date},
     TodoUpdateDate:{type:Date}
 

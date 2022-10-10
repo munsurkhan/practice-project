@@ -24,8 +24,6 @@ exports.UserLogin = (req,res)=>{
 
                 let Payload = {exp: Math.floor(Date.now() / 1000) + (24*60 * 60), data:data[0]}
                 let token = jwt.sign(Payload, 'SecretKey123456789');
-
-
                 res.status(200).json({status:"Success",token:token,data:data})
             }else{
                 res.status(401).json({status:"Unauthorized"})
